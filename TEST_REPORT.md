@@ -14,3 +14,5 @@ Venue iteration: 16 Rust integration tests pass. Added full 24-fixture mappingâ†
 Latest iteration: `cargo test --locked` passed 18 tests; `npm test` passed 2 jsdom component tests; `npm run build` passed. UI tests cover disabled identification for unknown devices, unknown answer IPC payload and visible backend errors. They mock IPC and do not establish desktop integration. Windows icon repair CI 42351480621 still building at this report update.
 
 TÐ—1.1 iteration: 20 Rust tests pass, including individual fade, unaffected fixture preservation, pause, stop, hazardous target refusal and Cue persistence. Existing frontend tests remain mocked IPC only. Windows run 42351480621 succeeded with nonempty installer; no clean installation or first-run evidence. Download attempt failed HTTP403.
+
+UFR: 26 Rust tests pass, including six fingerprint/library cases: cross-manufacturer match, equal-size incompatible Reset mapping, missing neutral/ranges, malformed Fine/overlapping ranges, semantic/neutral mismatch, immutable version persistence and passive candidate evidence. Frontend recognition tests cover incompatible results and unknown bypass. No physical recognition tests.

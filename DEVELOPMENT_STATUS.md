@@ -33,3 +33,9 @@ Added individual virtual fixture selection, backend monotonic timed Cue interpol
 Blockers: no clean-Windows installation/IPC smoke evidence; scene positioning not integrated into playback; projects/Cues still single-slot storage; no named groups/sequence editing; no verified-profile registry; no Fixture Fingerprint yet. Next priority is Windows smoke workflow and desktop validation, then complete project-scoped Cue persistence before recognition expansion.
 
 Windows smoke script added: validates installer nonempty, silently installs to runner temp, starts installed executable and checks process/window after 10 seconds. Not yet confirmed by CI; does not test IPC or reload. Core/UI commit f550e7c published.
+
+## UFR structural engine (user authorized proceeding without manual acceptance)
+
+Implemented normalized JSON fingerprint validation/comparison, manufacturer-independent structural candidate search, exact function/range/Coarse-Fine/neutral checks, missing-data explanations and hazard flags. Immutable profile versions and candidate notes persist in SQLite. Recognition UI is integrated into the current fixture step of VenueWizard. Matching and notes never enable output. Synthetic JSON example provided; no external library is bundled.
+
+26 Rust tests pass. OFL/GDTF/Hog/XML import, OCR/RDM matching, OEM graph and physical verification remain unimplemented. Windows CI for earlier playback changes still building at last check. Next: verify new CI, add conservative OFL importer with provenance and unsupported-function reporting; continue Windows IPC smoke and project-scoped persistence work.

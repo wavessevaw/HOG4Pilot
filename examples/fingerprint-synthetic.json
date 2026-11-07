@@ -1,0 +1,23 @@
+{
+  "id": "synthetic-dimmer",
+  "revision": 1,
+  "manufacturer": "Synthetic only",
+  "model": "Virtual dimmer",
+  "mode": "1ch",
+  "source": "HOG4Pilot synthetic example; not a hardware profile",
+  "channels": [
+    {
+      "offset": 1,
+      "fine_of": null,
+      "neutral": 0,
+      "ranges": [
+        {
+          "min": 0,
+          "max": 255,
+          "function": "intensity",
+          "semantics": "linear intensity 0 to 100 percent"
+        }
+      ]
+    }
+  ]
+}

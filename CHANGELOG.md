@@ -19,3 +19,7 @@ Fixed missing Windows icon resource. Added passive CSV patch import with address
 ## Individual virtual fixtures and timed Cue playback
 
 Primary editor now selects individual synthetic fixtures, records snapshots to SQLite and recalls ordered Cues with Rust monotonic interpolation. Added backend worker, pause, stop and startup project load. Hardware output remains disabled.
+
+## UFR structural recognition
+
+Added normalized JSON fingerprints, conservative local structural search, missing-data/difference explanations, immutable SQLite profile revisions and candidate notes. Integrated into Venue Auto-Mapping. Added six Rust and two UI tests. No automatic profile approval or external library adapters.

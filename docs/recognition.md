@@ -1,0 +1,9 @@
+# Universal Fixture Recognition: implemented subset
+
+Entry point: Venue wizard → «Определить профиль прибора». Import normalized JSON, add immutable version to the local library, then search against the library. An empty library is reported explicitly. An example schema instance is in `examples/fingerprint-synthetic.json`; it is synthetic and is not intended for physical equipment.
+
+Fingerprint schema records ID/revision/source plus channel offset, fine_of, neutral and exhaustive value ranges containing typed functions and exact semantic descriptions. Manufacturer/model strings do not establish compatibility. The comparison checks ordered channel positions, coarse/fine relationships, neutral values, sorted ranges, functions and semantics. Range gaps, unknown functions, absent neutral values or absent mode prevent a structural-match verdict. Different structures produce concrete channel-level differences. Structural match is only a candidate, never verification of a physical mode. Even identical Reset/LampControl/Hazer descriptions retain a hazard flag.
+
+SQLite stores immutable profile revisions in recognition_profiles. Recognition evidence stores fixture name, candidate revision, explanation and timestamp. It is not an authorization record and does not mutate fixture verified flags. No recognition path can call an output adapter. Current evidence is a manual candidate note, not a verified compatibility graph edge; fixture names can be reused across replacement venues, so it must not be used as hardware identity.
+
+Not implemented: OFL/GDTF/Hog/XML adapters, automatic external downloads, RDM matching, OCR, normalization of vendor-specific units/semantics, OEM graph traversal, human verification workflow or cryptographically bound authorization. Current search is exhaustive over local profiles and deliberately conservative. Do not present it as complete universal recognition.
