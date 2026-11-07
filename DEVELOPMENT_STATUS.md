@@ -13,3 +13,5 @@ Next concrete task: install/check desktop prerequisites, compile src-tauri, fix 
 ## Venue Auto-Mapping continuation
 
 Added 24-fixture synthetic venue, step answers with Pending/Unknown/Known states, passive hazer and unverified fixtures, per-fixture synthetic identification, observed coverage zones, grouping, warm-look frame generation, SQLite resume, React wizard. No physical discovery/RDM or Pan/Tilt calibration is claimed. Identification and playback only return simulated frames; no hardware network output exposed. Sixteen Rust tests and frontend build passed before publication; Windows result pending.
+
+Publication: pushed to https://github.com/wavessevaw/HOG4Pilot main, preserving original initial commit. Windows CI run https://github.com/wavessevaw/HOG4Pilot/actions/runs/42347148551 started; last observed status in_progress. Installer not confirmed. Previous statements that no remote exists are superseded.
