@@ -29,3 +29,7 @@ cargo run --release
 Ещё не реализованы: Tauri/React, SQLite, постоянный журнал, 16 бит, sACN, discovery/RDM, импорт профилей, пространственная модель, полноценное воспроизведение по времени, Hog, OCR и ИИ. Физических испытаний не проводилось. Возможности Hog не заявляются до проверки официальной документации для конкретной версии OS.
 
 См. [архитектуру](docs/architecture.md) и [журнал изменений](CHANGELOG.md).
+
+## Desktop development (in progress)
+
+React/Tauri sources and SQLite storage now exist. Run `npm ci`, `npm run build`, then `npm run tauri dev` with Rust and OS-specific Tauri prerequisites installed. Windows CI configuration is in `.github/workflows/windows.yml`; it has not yet run. Current detailed scope superseding the initial limitations above: [DEVELOPMENT_STATUS.md](DEVELOPMENT_STATUS.md).
