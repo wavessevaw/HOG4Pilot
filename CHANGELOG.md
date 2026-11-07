@@ -7,3 +7,7 @@
 ## Development continuation — 2026-11-07
 
 Added SQLite transactional project storage, prior revision retention, saved-look validation, React editor and Tauri IPC sources, Windows NSIS workflow, conservative CSV profile import and three additional integration tests. Frontend build and 13 Rust tests pass. Tauri/Windows compilation not yet verified.
+
+## Venue Auto-Mapping prototype
+
+Added persistent wizard for a 24-fixture synthetic patch, unknown answers, safe per-fixture simulation, coverage grouping and warm-look simulation. Unknown fixtures and hazer remain passive. Added three integration tests.

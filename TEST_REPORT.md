@@ -8,3 +8,5 @@ SQLite test reopens a file-backed database and verifies that rejected invalid wr
 CSV tests ensure unverified imports and rejection of unsupported/ambiguous channel descriptions.
 
 Not tested: Tauri compilation/runtime, browser interaction, Windows installer, sACN, Hog, physical devices. Linux GTK/WebKit development libraries are absent (`pkg-config` check failed). No Git remote configured, therefore GitHub Actions has not run.
+
+Venue iteration: 16 Rust integration tests pass. Added full 24-fixture mapping→grouping→frame→SQLite recovery test, all-unknown completion, hazer/unknown refusal. Frontend TypeScript/Vite build passes. GUI interaction and hardware mapping remain unverified.

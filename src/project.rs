@@ -24,3 +24,7 @@ impl Store {
  }
  pub fn load(&self)->Result<Option<Project>,String>{use rusqlite::OptionalExtension;let body:Option<String>=self.0.query_row("SELECT body FROM projects WHERE id=1",[],|r|r.get(0)).optional().map_err(|e|e.to_string())?;body.map(|b|{let p:Project=serde_json::from_str(&b).map_err(|e|e.to_string())?;p.validate()?;Ok(p)}).transpose()}
 }
+impl Store {
+ pub fn save_venue(&self,v:&crate::venue::Venue)->Result<(),String>{v.validate()?;self.0.execute_batch("CREATE TABLE IF NOT EXISTS venue(id INTEGER PRIMARY KEY CHECK(id=1),body TEXT NOT NULL)").map_err(|e|e.to_string())?;let body=serde_json::to_string(v).map_err(|e|e.to_string())?;self.0.execute("INSERT INTO venue VALUES(1,?1) ON CONFLICT(id) DO UPDATE SET body=excluded.body",params![body]).map_err(|e|e.to_string())?;Ok(())}
+ pub fn load_venue(&self)->Result<Option<crate::venue::Venue>,String>{use rusqlite::OptionalExtension;self.0.execute_batch("CREATE TABLE IF NOT EXISTS venue(id INTEGER PRIMARY KEY CHECK(id=1),body TEXT NOT NULL)").map_err(|e|e.to_string())?;let body:Option<String>=self.0.query_row("SELECT body FROM venue WHERE id=1",[],|r|r.get(0)).optional().map_err(|e|e.to_string())?;body.map(|b|{let v:crate::venue::Venue=serde_json::from_str(&b).map_err(|e|e.to_string())?;v.validate()?;Ok(v)}).transpose()}
+}
