@@ -31,3 +31,5 @@ Verified GitHub run 42351480621 succeeded and artifact exists (2,672,621 bytes).
 Added individual virtual fixture selection, backend monotonic timed Cue interpolation on a 25 ms worker, pause/stop, current-state Cue recording and SQLite sequence persistence, GO/manual Cue recall and startup project loading. Removed old three-fixture editor from primary UI to avoid competing controls. Twenty Rust tests pass. Physical output remains unavailable.
 
 Blockers: no clean-Windows installation/IPC smoke evidence; scene positioning not integrated into playback; projects/Cues still single-slot storage; no named groups/sequence editing; no verified-profile registry; no Fixture Fingerprint yet. Next priority is Windows smoke workflow and desktop validation, then complete project-scoped Cue persistence before recognition expansion.
+
+Windows smoke script added: validates installer nonempty, silently installs to runner temp, starts installed executable and checks process/window after 10 seconds. Not yet confirmed by CI; does not test IPC or reload. Core/UI commit f550e7c published.

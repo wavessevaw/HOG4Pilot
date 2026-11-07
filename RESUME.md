@@ -24,3 +24,5 @@ Remote is now configured and code is published on main. First Windows run: 42347
 Latest continuation: icon resource fixed; inspect CI 42351480621 (icon commit 1d2df64) and newer runs. Passive patch importer and frontend component tests implemented. Run `cargo test --locked`, `npm test`, `npm run build`. No imported profile can output. Next implement profile approval registry and timed output worker after resolving actual Windows CI failures.
 
 TЗ1.1 latest: src/playback.rs implements individual synthetic states and timed transitions; ShowControl.tsx is primary editor/playback. Check newest Windows CI after push. First confirmed successful installer is run 42351480621; artifact download here returned HTTP403, not tested on Windows. Next add installer launch/IPC smoke to Windows runner and validate project/Cue reload. Do not start Fingerprint before this basic chain works. No background agent running.
+
+scripts/windows-smoke.ps1 now runs after Tauri build in Windows CI. Check its actual result; installation success must not be assumed. It covers process/window only, not IPC actions. TASK_QUEUE.md contains remaining P0 order.
