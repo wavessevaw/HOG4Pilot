@@ -23,3 +23,11 @@ Initial Windows runs failed because src-tauri/icons/icon.ico was missing. Added 
 Added CSV patch import with explicit universe/address/footprint/kind, duplicate ID and overlap validation, and persistent passive venue mapping. All imported fixtures remain unverified, and frame generation is rejected even with an empty selection. UI replacement requires confirmation. Added jsdom component tests with mocked IPC (not desktop E2E).
 
 Latest local validation: 18 Rust integration tests, 2 frontend component tests, strict TypeScript/Vite build pass. Next: inspect Windows build result, then backend profile approval registry, timed playback and real browser/desktop tests.
+
+## TЗ 1.1: usable-chain work
+
+Verified GitHub run 42351480621 succeeded and artifact exists (2,672,621 bytes). Download attempt returned HTTP 403 from artifact storage; installation/first-run testing has NOT occurred.
+
+Added individual virtual fixture selection, backend monotonic timed Cue interpolation on a 25 ms worker, pause/stop, current-state Cue recording and SQLite sequence persistence, GO/manual Cue recall and startup project loading. Removed old three-fixture editor from primary UI to avoid competing controls. Twenty Rust tests pass. Physical output remains unavailable.
+
+Blockers: no clean-Windows installation/IPC smoke evidence; scene positioning not integrated into playback; projects/Cues still single-slot storage; no named groups/sequence editing; no verified-profile registry; no Fixture Fingerprint yet. Next priority is Windows smoke workflow and desktop validation, then complete project-scoped Cue persistence before recognition expansion.

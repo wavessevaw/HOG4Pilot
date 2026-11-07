@@ -101,3 +101,4 @@ pub mod output {
 pub mod project;
 pub mod import;
 pub mod venue;
+pub mod playback;

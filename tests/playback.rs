@@ -1,0 +1,4 @@
+use hog4pilot::{playback::{Playback,Cue,FixtureState},project::Store};
+fn cue()->Cue{Cue{name:"Ведущий".into(),seconds:2.0,fixtures:vec![FixtureState{id:"Прибор 01".into(),intensity:1.0,rgb:[1.0,0.5,0.0]}]}}
+#[test]fn individual_fade_pause_stop(){let mut p=Playback::new();p.cue(cue(),0.0).unwrap();let half=p.tick(1.0).unwrap();assert_eq!(half[0],128);assert_eq!(half[4],0);p.pause(1.0).unwrap();assert_eq!(p.tick(4.0).unwrap(),half);p.cue(cue(),4.0).unwrap();assert_eq!(p.tick(6.0).unwrap()[0],255);p.stop();assert!(p.cue(cue(),7.0).is_err());}
+#[test]fn invalid_target_and_cue_storage(){let mut p=Playback::new();let mut c=cue();c.fixtures[0].id="Прибор 22".into();assert!(p.cue(c,0.0).is_err());let store=Store::open(std::path::Path::new(":memory:")).unwrap();store.save_cues(&[cue(),cue()]).unwrap();assert_eq!(store.load_cues().unwrap().len(),2);}

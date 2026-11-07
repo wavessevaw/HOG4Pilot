@@ -15,3 +15,7 @@ Added persistent wizard for a 24-fixture synthetic patch, unknown answers, safe 
 ## Patch import and UI tests
 
 Fixed missing Windows icon resource. Added passive CSV patch import with address conflict detection, persisted variable-size venue mapping, and explicit replacement confirmation. Added UI component tests to Windows CI. Imported data cannot grant output permission.
+
+## Individual virtual fixtures and timed Cue playback
+
+Primary editor now selects individual synthetic fixtures, records snapshots to SQLite and recalls ordered Cues with Rust monotonic interpolation. Added backend worker, pause, stop and startup project load. Hardware output remains disabled.
