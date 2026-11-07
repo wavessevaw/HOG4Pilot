@@ -1,0 +1,3 @@
+use hog4pilot::venue::Venue;
+#[test]fn imported_patch_is_passive(){let mut v=Venue::import_patch("id,universe,address,channels,kind\nA,0,1,8,light\nB,1,1,8,hazer").unwrap();assert_eq!(v.fixtures.len(),2);assert!(v.identify().is_err());assert!(v.frame(&[],0.5,[1.0;3]).is_err());for _ in 0..2{for field in ["mount","position","role","coverage"]{v.answer(field,None).unwrap();}v.next().unwrap();}assert!(v.groups().is_empty());}
+#[test]fn bad_patch_rejected(){for rows in ["A,0,1,8,light\nB,0,8,4,light","A,0,0,4,light","A,0,512,2,light","A,0,1,4,laser","A,0,1,4,light\nA,1,1,4,light","A,0,1,0,light"]{assert!(Venue::import_patch(&format!("id,universe,address,channels,kind\n{rows}")).is_err());}}

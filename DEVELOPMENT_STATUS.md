@@ -15,3 +15,11 @@ Next concrete task: install/check desktop prerequisites, compile src-tauri, fix 
 Added 24-fixture synthetic venue, step answers with Pending/Unknown/Known states, passive hazer and unverified fixtures, per-fixture synthetic identification, observed coverage zones, grouping, warm-look frame generation, SQLite resume, React wizard. No physical discovery/RDM or Pan/Tilt calibration is claimed. Identification and playback only return simulated frames; no hardware network output exposed. Sixteen Rust tests and frontend build passed before publication; Windows result pending.
 
 Publication: pushed to https://github.com/wavessevaw/HOG4Pilot main, preserving original initial commit. Windows CI run https://github.com/wavessevaw/HOG4Pilot/actions/runs/42347148551 started; last observed status in_progress. Installer not confirmed. Previous statements that no remote exists are superseded.
+
+## Patch import and Windows repair
+
+Initial Windows runs failed because src-tauri/icons/icon.ico was missing. Added the icon and reran CI (42351480621, pending at this update). No installer success claimed.
+
+Added CSV patch import with explicit universe/address/footprint/kind, duplicate ID and overlap validation, and persistent passive venue mapping. All imported fixtures remain unverified, and frame generation is rejected even with an empty selection. UI replacement requires confirmation. Added jsdom component tests with mocked IPC (not desktop E2E).
+
+Latest local validation: 18 Rust integration tests, 2 frontend component tests, strict TypeScript/Vite build pass. Next: inspect Windows build result, then backend profile approval registry, timed playback and real browser/desktop tests.

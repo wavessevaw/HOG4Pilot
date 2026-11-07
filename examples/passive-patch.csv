@@ -1,0 +1,5 @@
+id,universe,address,channels,kind
+Front-left,0,1,8,light
+Front-right,0,9,8,light
+Hazer,0,101,2,hazer
+Unknown-OEM,1,1,16,unknown

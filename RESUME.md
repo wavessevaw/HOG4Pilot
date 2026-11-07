@@ -20,3 +20,5 @@ Continue with desktop compile and backend playback worker. Maintain tests and co
 Latest: remote wavessevaw/HOG4Pilot found. Venue wizard implemented for synthetic patch only. Next: inspect Windows CI result, then add imported patch input with immutable profile verification, timed identification expiry, real UI tests and individual-zone playback. RDM discovery and moving-head calibration remain absent.
 
 Remote is now configured and code is published on main. First Windows run: 42347148551. Check it before any installer claim (`gh run view 42347148551 --repo wavessevaw/HOG4Pilot`). Local branch master was pushed to remote main; use `git push origin HEAD:main`. Do not force-push.
+
+Latest continuation: icon resource fixed; inspect CI 42351480621 (icon commit 1d2df64) and newer runs. Passive patch importer and frontend component tests implemented. Run `cargo test --locked`, `npm test`, `npm run build`. No imported profile can output. Next implement profile approval registry and timed output worker after resolving actual Windows CI failures.

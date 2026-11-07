@@ -11,3 +11,7 @@ Added SQLite transactional project storage, prior revision retention, saved-look
 ## Venue Auto-Mapping prototype
 
 Added persistent wizard for a 24-fixture synthetic patch, unknown answers, safe per-fixture simulation, coverage grouping and warm-look simulation. Unknown fixtures and hazer remain passive. Added three integration tests.
+
+## Patch import and UI tests
+
+Fixed missing Windows icon resource. Added passive CSV patch import with address conflict detection, persisted variable-size venue mapping, and explicit replacement confirmation. Added UI component tests to Windows CI. Imported data cannot grant output permission.

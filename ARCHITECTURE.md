@@ -7,3 +7,5 @@ Rust core remains the authority for validating frames. React sends normalized in
 Tauri owns a mutex-protected store and engine, opens the database under app_data_dir, and exposes save/load/preview/stop. Stop latches until process restart. This is not a physical emergency stop.
 
 See docs/architecture.md for core contracts. Still required: independent playback/output process and watchdog, structured verification provenance, migrations beyond v1, venue/profile persistence, output ownership policy, calibration, discovery, Hog adapter.
+
+Patch import contract: `Venue::import_patch` accepts UTF-8 CSV header `id,universe,address,channels,kind`; fields cannot contain commas. Universe uses Art-Net numbering 0–32767; address is 1-based. Kind is light/hazer/unknown. Imported venues have simulation=false, all fixtures unverified. `validate_passive` enforces IDs, footprints and conflicts within each universe. `frame` refuses all imported venues. `venue_import` validates before saving and returns the persisted model. This is patch ingestion, not RDM discovery or profile verification.
